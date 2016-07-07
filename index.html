@@ -13,6 +13,26 @@
         <h1>{{ msg }}</h1>
         <input type="text" class="form-control" v-model="msg" >
     </div>
+    <div class="row">
+        <h1>List</h1>
+        <ul>
+            <li v-for="user in list">
+                {{user.name}}
+            </li>
+        </ul>
+    </div>
+
+    <div class="row">
+        <h1>My List elements</h1>
+        <input type="text" class="form-control" v-model="newElement" v-on:keyup.enter="addElement" >
+        <ul>
+            <li v-for="item in elements">
+                {{ item.title }}
+                <a href="#" v-on:click="removeElement($event,$index)">X</a>
+            </li>
+        </ul>
+    </div>
+
 </div>
 
 
