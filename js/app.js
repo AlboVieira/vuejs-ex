@@ -2,11 +2,13 @@
 var app = new Vue({
     el:'#app',
     data:{
-        books:[]
+        books:[],
+        search:'',
     },
     methods:{
 
     },
+
     ready: function () {
         var self = this;
         self.$http.get('data.json').then(function (response) {
