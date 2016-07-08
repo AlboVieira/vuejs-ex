@@ -11,7 +11,19 @@ var hello = new Vue({
             {name: "Pedro"}
         ],
         newElement:'',
-        elements:[]
+        elements:[],
+        objectA:{
+            'font-size':'30px'
+        },
+        objectB:{
+            color: 'pink'
+        },
+        myListForm: [],
+        myForm: {
+            name:'',
+            email:''
+        }
+
     },
     methods:{
         addElement: function () {
@@ -29,6 +41,11 @@ var hello = new Vue({
 
         myClick: function () {
             alert('click');
+        },
+
+        addForm: function(){
+            this.myListForm.push(this.myForm)
+            this.myForm = {};
         }
     }
 

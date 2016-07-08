@@ -39,6 +39,26 @@
         <button @click="myClick">@Click</button>
     </div>
 
+    <div class="row">
+        <h1>V-Bind</h1>
+        <p v-bind:class="{ 'text-danger': true }">Text</p>
+        <p :class="{ 'text-info': true }">Text</p>
+        <p :style="[objectA,objectB]">Styles inline</p>
+        <p v-bind:="{id: true , name: true}">Bind Attribute</p>
+    </div>
+
+    <div class="row">
+        <h1>V-Model</h1>
+        <ul>
+            <li v-for="myList in myListForm">
+                {{myList.name }} - {{myList.email}}
+            </li>
+        </ul>
+        <input type="text" v-model="myForm.name">
+        <input type="email" v-model="myForm.email">
+        <button @click="addForm">Add</button>
+    </div>
+
 </div>
 
 
