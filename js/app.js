@@ -4,9 +4,14 @@ var app = new Vue({
     data:{
         books:[],
         search:'',
+        orderCol:'id',
+        order: 1
     },
     methods:{
-
+        reOrder: function(e,col){
+            this.orderCol = col;
+            this.order = this.order == 1 ? -1 : 1;
+        }
     },
 
     ready: function () {

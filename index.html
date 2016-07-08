@@ -19,17 +19,39 @@
         <table class="table ">
             <thead>
                 <tr>
-                    <th>Id</th>
-                    <th>Title</th>
-                    <th>Price</th>
-                    <th>Description</th>
+                    <th><a href="#" v-on:click="reOrder($event,'id')">
+                        <i class="fa fa-fw fa-sort"
+                           v-bind:class="{'fa-sort-amount-asc': order == 1 && orderCol == 'id', 'fa-sort-amount-desc': order == -1 && orderCol == 'id'}">
+
+                        </i></a>Id</th>
+                    <th><a href="#" v-on:click="reOrder($event,'title')">
+                        <i class="fa fa-fw fa-sort"
+                           v-bind:class="{'fa-sort-amount-asc': order == 1 && orderCol == 'title', 'fa-sort-amount-desc': order == -1 && orderCol == 'title'}">
+
+                        </i>
+                    </a>Title</th>
+                    <th><a href="#" v-on:click="reOrder($event,'price')">
+                        <i class="fa fa-fw fa-sort"
+                           v-bind:class="{'fa-sort-amount-asc': order == 1 && orderCol == 'price', 'fa-sort-amount-desc': order == -1 && orderCol == 'price'}">
+
+                        </i>
+                    </a>Price</th>
+                    <th><a href="#" v-on:click="reOrder($event,'description')">
+                        <i class="fa fa-fw fa-sort"
+                           v-bind:class="{'fa-sort-amount-asc': order == 1 && orderCol == 'description', 'fa-sort-amount-desc': order == -1 && orderCol == 'description'}">
+
+                        </i>
+                    </a>Description</th>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="book in books | filterBy search">
+                <tr v-for="book in books
+                 | filterBy search 'title' 'description'
+                 | orderBy orderCol order
+                 ">
                   <td>{{ book.id }}</td>
                   <td>{{ book.title }}</td>
-                  <td>{{ book.price }}</td>
+                  <td>{{ book.price | currency 'R$' }}</td>
                   <td>{{ book.description }}</td>
                 </tr>
             </tbody>
