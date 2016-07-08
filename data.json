@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "Batman the dark knight",
+    "price": 111.94,
+    "description": "Book cool"
+  },
+
+  {
+    "id": 2,
+    "title": "The Joke Mortal",
+    "price": 28.94,
+    "description": "Ghraphic Novel"
+  },
+
+  {
+    "id": 3,
+    "title": "Civil War",
+    "price": 80.94,
+    "description": "Marvel Comic"
+  }
+]

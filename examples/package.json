@@ -1,0 +1,18 @@
+{
+  "name": "vuejs-mybooks",
+  "version": "0.0.0",
+  "description": "Test Vue",
+  "main": "index.js",
+  "dependencies": {
+    "vue": "~1.0.26",
+    "bootstrap": "latest",
+    "font-awesome": "latest",
+    "vue-resource":"~0.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause"
+}
